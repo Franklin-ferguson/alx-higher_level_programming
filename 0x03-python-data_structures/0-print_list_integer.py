@@ -7,4 +7,3 @@ def print_list_integer(my_list=[]):
     while i <= count:
         print("{:d}".format(my_list[i]))
         i += 1
-print_list_integer()
