@@ -2,6 +2,7 @@
 
 """Declaring a class called Square."""
 
+
 class Square:
     """Define a class Square"""
 
