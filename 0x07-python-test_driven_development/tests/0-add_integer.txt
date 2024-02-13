@@ -1,0 +1,23 @@
+
+def test_add_integers():
+assert add_integer(5, 3) == 8
+    assert add_integer(10.5, 2.3) == 12
+    assert add_integer(10, b=20) == 30
+
+def test_add_floats():
+    assert add_integer(5.5, 3.7) == 9
+
+def test_type_error():
+    with pytest.raises(TypeError):
+        add_integer("hello", 5)
+
+def test_type_error_both():
+    with pytest.raises(TypeError):
+        add_integer("hello", "world")
+
+# Run tests if the script is executed directly
+if __name__ == "__main__":
+    test_add_integers()
+    test_add_floats()
+    test_type_error()
+    test_type_error_both()
