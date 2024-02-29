@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-
-"""Defines a class called Rectangle"""
-"""An inheritance of the class Base"""
+"""Defines a rectangle class."""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """A class Rectangle from Base"""
+    """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle.
@@ -23,7 +21,6 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-
         self.width = width
         self.height = height
         self.x = x
@@ -32,7 +29,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """set/get the value of width of the Rectangle"""
+        """Set/get the width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -45,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """set/get the value of height of the Rectangle"""
+        """Set/get the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -53,7 +50,7 @@ class Rectangle(Base):
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("height must be greater than 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
