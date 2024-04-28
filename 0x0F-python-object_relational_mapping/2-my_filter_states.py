@@ -1,25 +1,20 @@
 #!/usr/bin/python3
 
-import MySQLdb as mysqldb
+
+import MySQLdb as db
 from sys import argv
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
-    mysqldb_connect = mysqldb.connect(
-            host="localhost",
-            port=3306,
-            user=argv[1],
-            passwd=argv[2],
-            db=argv[3]
-        )
+    db_connect = db.connect(host="localhost", port=3306,
+                            user=argv[1], passwd=argv[2], db=argv[3])
+    db_cursor = db_connect.cursor()
 
-    mysqldb_cursor = mysqldb_connect.cursor()
-
-    mysqldb_cursor.execute(
+    db_cursor.execute(
         "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
                         states.id ASC".format(argv[4]))
-    rows = mysqldb_cursor.fetchall()
+    rows_selected = db_cursor.fetchall()
 
-    for row in rows:
+    for row in rows_selected:
         print(row)
 
