@@ -15,7 +15,8 @@ if __name__ == "__main__":
     Access the database and list  all the states
     """
 
-    db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(argv[1], argv[2], argv[3])
+    db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        argv[1], argv[2], argv[3])
 
     engine = create_engine(db_url)
 
@@ -24,6 +25,4 @@ if __name__ == "__main__":
     session = Session()
 
     for instance in session.query(State).order_by(State.id):
-        print('{0}: {1}'.format(instance.id, instance.name))
-    
-
+        print("{0}: {1}".format(instance.id, instance.name))
