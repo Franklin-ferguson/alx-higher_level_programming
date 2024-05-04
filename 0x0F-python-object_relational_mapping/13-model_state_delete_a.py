@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-    This script prints the first object of a database
+    This script deletes all State objects
+    with a name containing the letter `a`
 """
 
 from model_state import Base, State
@@ -12,9 +13,9 @@ import sys
 if __name__ == "__main__":
 
     """
-    Access to the database and get a state
-    from the database.
+    Deletes State objects on the database.
     """
+
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(
             sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
