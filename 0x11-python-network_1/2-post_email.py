@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+"""Sends a POST request to a given URL with an email
 """
-script that takes in a URL and an email, 
-"""
-
-import urllib.request
 import sys
 import urllib.parse
+import urllib.request
+
 
 if __name__ == "__main__":
     url = sys.argv[1]
