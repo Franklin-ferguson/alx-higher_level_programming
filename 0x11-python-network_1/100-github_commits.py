@@ -3,14 +3,14 @@
 """
 
 from sys import argv
-import request
+import requests
 
 if __name__ == "__main__":
 
     url = "https://api.github.com/repos/{}/{}/commits".format(
             argv[2], argv[1])
 
-    r = request.get(url)
+    r = requests.get(url)
 
     commit = r.json()
 
