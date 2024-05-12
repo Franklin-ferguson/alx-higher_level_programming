@@ -11,11 +11,8 @@ if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     req = Request(url)
     with urlopen(req) as response:
-        status_code = response.getcode()
-        the_page = response.read().decode()
-        lines = the_page.splitlines()
-
-        print("{}".format(status_code))
-        print("\nBody: ")
-        for line in lines:
-            print("{}".format(line))
+        the_page = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(the_page)))
+        print("\t- content: {}".format(the_page))
+        print("\t- utf8 content: {}".format(the_page.decode("utf-8")))
