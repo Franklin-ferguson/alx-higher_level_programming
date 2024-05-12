@@ -10,4 +10,11 @@ from urllib.error import URLError, HTTPError
 url = 'https://alx-intranet.hbtn.io/status'
 req = Request(url)
 with urlopen(req) as response:
-    the_page = response.read()
+    status_code = response.getcode()
+    the_page = response.read().decode()
+    lines = the_page.splitlines()
+
+    print("{}".format(status_code))
+    print("\nBody: ")
+    for line in lines:
+        print("{}".format(line))
