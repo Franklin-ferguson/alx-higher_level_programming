@@ -2,7 +2,7 @@
 """prints the commit of candidates
 """
 
-from sys imoort argv
+from sys import argv
 import request
 
 if __name__ == "__main__":
